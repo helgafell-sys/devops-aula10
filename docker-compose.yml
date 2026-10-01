@@ -1,7 +1,7 @@
   # Serviço 1: Banco de Dados
   db:
     image: postgres:15-alpine
-    container_name: meu_postgres_meunome
+    container_name: meu_postgres_joaoalves
     restart: always
     environment:
       POSTGRES_USER: admin
@@ -15,10 +15,10 @@
   # Serviço 2: Aplicação Node.js
   app:
     build: .
-    container_name: minha_api_node_meunome
+    container_name: minha_api_node_joaoalves
     restart: on-failure # Reinicia se falhar (ex: se o banco ainda estiver subindo)
     ports:
-      - "8050:8080"
+      - "8025:8080"
     environment:
       DB_HOST: db # Nome do serviço do banco na rede do Compose
       DB_USER: admin
